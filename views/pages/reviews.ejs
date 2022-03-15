@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+        <br></br>
+        <div class="container">
+            <h1 align = 'center'>University reviews</h1>
+            <br></br>
+            <table class="table table-bordered" id="stats_table">
+            <tr>
+                <th class="align-bottom" >University</th>
+                <th class="align-bottom">Review</th>
+                <th class="align-bottom" >Review Date</th>
+            </tr>
+            <% if (info) { 
+                var name_rows = '';
+                info.forEach(function(item){
+                    name_rows += '<tr><td>' + item.university_name + '</td>';
+                    name_rows += '<td>' + item.review + '</td>';
+                    name_rows += '<td>' + item.review_date + '</td>';
+                });%>
+            <%- name_rows %>
+            <% } %>
+        </table>
+        </div>
+        
+<%- include('../partials/footer') %>
